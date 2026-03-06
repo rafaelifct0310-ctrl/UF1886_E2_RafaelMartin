@@ -198,3 +198,4 @@ id | order_id | product_id |                       name                        |
 #### Crear Schema Staging y tabla destino
 ```
 
+```
