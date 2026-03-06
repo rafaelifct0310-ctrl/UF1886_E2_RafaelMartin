@@ -96,6 +96,8 @@ docker exec -it postgres.db psql -U user -d odoo
 ```
 ```
 odoo=# \df
+```
+```
                                                                     List of functions
  Schema |                   Name                    | Result data type |                            Argument data types                            | Type
 --------+-------------------------------------------+------------------+---------------------------------------------------------------------------+------
