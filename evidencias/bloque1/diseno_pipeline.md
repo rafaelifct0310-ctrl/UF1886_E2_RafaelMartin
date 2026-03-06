@@ -102,3 +102,56 @@ Indexes:
     "sale_order__campaign_id_index" btree (campaign_id) WHERE campaign_id IS NOT NULL
 ```
 
+```
+\d sale_order_line
+```
+```
+                                                Table "public.sale_order_line"
+          Column           |            Type             | Collation | Nullable |                   Default
+---------------------------+-----------------------------+-----------+----------+---------------------------------------------
+ id                        | integer                     |           | not null | nextval('sale_order_line_id_seq'::regclass)
+ order_id                  | integer                     |           | not null |
+ sequence                  | integer                     |           |          |
+ company_id                | integer                     |           |          |
+ currency_id               | integer                     |           |          |
+ order_partner_id          | integer                     |           |          |
+ salesman_id               | integer                     |           |          |
+ product_id                | integer                     |           |          |
+ product_uom               | integer                     |           |          |
+ linked_line_id            | integer                     |           |          |
+ combo_item_id             | integer                     |           |          |
+ product_packaging_id      | integer                     |           |          |
+ create_uid                | integer                     |           |          |
+ write_uid                 | integer                     |           |          |
+ state                     | character varying           |           |          |
+ display_type              | character varying           |           |          |
+ virtual_id                | character varying           |           |          |
+ linked_virtual_id         | character varying           |           |          |
+ qty_delivered_method      | character varying           |           |          |
+ invoice_status            | character varying           |           |          |
+ analytic_distribution     | jsonb                       |           |          |
+ name                      | text                        |           | not null |
+ product_uom_qty           | numeric                     |           | not null |
+ price_unit                | numeric                     |           | not null |
+ discount                  | numeric                     |           |          |
+ price_subtotal            | numeric                     |           |          |
+ price_total               | numeric                     |           |          |
+ price_reduce_taxexcl      | numeric                     |           |          |
+ price_reduce_taxinc       | numeric                     |           |          |
+ qty_delivered             | numeric                     |           |          |
+ qty_invoiced              | numeric                     |           |          |
+ qty_to_invoice            | numeric                     |           |          |
+ untaxed_amount_invoiced   | numeric                     |           |          |
+ untaxed_amount_to_invoice | numeric                     |           |          |
+ is_downpayment            | boolean                     |           |          |
+ is_expense                | boolean                     |           |          |
+ create_date               | timestamp without time zone |           |          |
+ write_date                | timestamp without time zone |           |          |
+ technical_price_unit      | double precision            |           |          |
+ price_tax                 | double precision            |           |          |
+ product_packaging_qty     | double precision            |           |          |
+ customer_lead             | double precision            |           | not null |
+Indexes:
+    "sale_order_line_pkey" PRIMARY KEY, btree (id)
+    "sale_order_line__company_id_index" btree (company_id)
+```
