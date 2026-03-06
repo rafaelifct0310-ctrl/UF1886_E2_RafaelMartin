@@ -1,5 +1,24 @@
  # Diseño pipeline
  
+ ## Identificar flujo de datos
+### Entrar al contenedor PostgreSQL
+
+```
+docker exec -it postgres.db psql -U user -d odoo
+```
+```
+odoo=# \df
+```
+```
+                                                                    List of functions
+ Schema |                   Name                    | Result data type |                            Argument data types                            | Type
+--------+-------------------------------------------+------------------+---------------------------------------------------------------------------+------
+ public | gin_extract_query_trgm                    | internal         | text, internal, smallint, internal, internal, internal, internal          | func
+ public | gin_extract_value_trgm                    | internal         | text, internal                                                            | func
+ public | gin_trgm_consistent                       | boolean          | internal, smallint, text, integer, internal, internal, internal, internal | func
+ ```
+
+
  #### Explorar tablas
  ##### Tablas relevantes
  ```
