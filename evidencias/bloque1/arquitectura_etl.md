@@ -94,3 +94,31 @@ WARNING: sun.misc.Unsafe::objectFieldOffset will be removed in a future release
 ```
 docker exec -it postgres.db psql -U user -d odoo
 ```
+```
+odoo=# \df
+                                                                    List of functions
+ Schema |                   Name                    | Result data type |                            Argument data types                            | Type
+--------+-------------------------------------------+------------------+---------------------------------------------------------------------------+------
+ public | gin_extract_query_trgm                    | internal         | text, internal, smallint, internal, internal, internal, internal          | func
+ public | gin_extract_value_trgm                    | internal         | text, internal                                                            | func
+ public | gin_trgm_consistent                       | boolean          | internal, smallint, text, integer, internal, internal, internal, internal | func
+ ```
+
+ #### Buscar tabla odoo_sales
+ ```
+ \dt *sale*
+ ```
+ ```
+ odoo=# \dt *sale*
+                               List of relations
+ Schema |                         Name                         | Type  | Owner
+--------+------------------------------------------------------+-------+-------
+ public | account_tax_sale_order_discount_rel                  | table | user
+ public | account_tax_sale_order_line_rel                      | table | user
+ public | product_document_sale_pdf_form_field_rel             | table | user
+ public | product_template_attribute_value_sale_order_line_rel | table | user
+ public | quotation_document_sale_order_rel                    | table | user
+ public | quotation_document_sale_pdf_form_field_rel           | table | user
+ ```
+
+ 
