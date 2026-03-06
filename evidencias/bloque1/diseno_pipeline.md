@@ -196,6 +196,30 @@ id | order_id | product_id |                       name                        |
 ```
 
 #### Crear Schema Staging y tabla destino
-```
 
+- Conectado al psql del contenedor:
+```
+CREATE SCHEMA IF NOT EXISTS staging;
+
+CREATE TABLE IF NOT EXISTS staging.sales_clean (
+    id                  SERIAL PRIMARY KEY,
+    sale_order_id       INTEGER,
+    order_name          VARCHAR(100),
+    partner_name        VARCHAR(255),
+    partner_email       VARCHAR(255),
+    product_name        VARCHAR(255),
+    product_code        VARCHAR(100),
+    qty_ordered         NUMERIC(16,4)  DEFAULT 0,
+    unit_price          NUMERIC(16,4)  DEFAULT 0,
+    price_subtotal      NUMERIC(16,4)  DEFAULT 0,
+    order_date          DATE,
+    order_state         VARCHAR(50),
+    currency_name       VARCHAR(10),
+    etl_load_date       TIMESTAMP      DEFAULT NOW(),
+    etl_source          VARCHAR(100)   DEFAULT 'hop_pipeline_v1'
+);
+
+-- Verificar creación
+\dt staging.*
+\d staging.sales_clean
 ```
