@@ -256,9 +256,18 @@ Indexes:
 ```
 - Dar permisos
 ```
-GRANT ALL PRIVILEGES ON SCHEMA staging TO odoo;
-GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA staging TO odoo;
-GRANT USAGE, SELECT ON ALL SEQUENCES IN SCHEMA staging TO odoo;
+GRANT ALL PRIVILEGES ON SCHEMA staging TO "user";
+GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA staging TO "user";
+GRANT USAGE, SELECT ON ALL SEQUENCES IN SCHEMA staging TO "user";
 ```
-
+- Verificar
+```
+SELECT COUNT(*) FROM staging.sales_clean;
+```
+```
+count
+-------
+     0
+(1 row)
+```
 
