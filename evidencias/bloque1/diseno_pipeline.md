@@ -1,6 +1,6 @@
- # Diseño pipeline
+# Diseño pipeline
  
- ## Identificar flujo de datos
+## Identificar flujo de datos
 ### Entrar al contenedor PostgreSQL
 
 ```
@@ -19,8 +19,8 @@ odoo=# \df
  ```
 
 
- #### Explorar tablas
- ##### Tablas relevantes
+#### Explorar tablas
+##### Tablas relevantes
  ```
  \dt sale*
  \dt res*
@@ -45,4 +45,60 @@ odoo=# \df
 
  ```
 
-### 
+#### Ver estrucutra de sale_order
+```
+\d sale_order
+```
+```
+                                                 Table "public.sale_order"
+            Column            |            Type             | Collation | Nullable |                Default
+------------------------------+-----------------------------+-----------+----------+----------------------------------------
+ id                           | integer                     |           | not null | nextval('sale_order_id_seq'::regclass)
+ campaign_id                  | integer                     |           |          |
+ source_id                    | integer                     |           |          |
+ medium_id                    | integer                     |           |          |
+ company_id                   | integer                     |           | not null |
+ partner_id                   | integer                     |           | not null |
+ journal_id                   | integer                     |           |          |
+ partner_invoice_id           | integer                     |           | not null |
+ partner_shipping_id          | integer                     |           | not null |
+ fiscal_position_id           | integer                     |           |          |
+ payment_term_id              | integer                     |           |          |
+ pricelist_id                 | integer                     |           |          |
+ currency_id                  | integer                     |           |          |
+ user_id                      | integer                     |           |          |
+ team_id                      | integer                     |           |          |
+ create_uid                   | integer                     |           |          |
+ write_uid                    | integer                     |           |          |
+ access_token                 | character varying           |           |          |
+ name                         | character varying           |           | not null |
+ state                        | character varying           |           |          |
+ client_order_ref             | character varying           |           |          |
+ origin                       | character varying           |           |          |
+ reference                    | character varying           |           |          |
+ signed_by                    | character varying           |           |          |
+ invoice_status               | character varying           |           |          |
+ validity_date                | date                        |           |          |
+ note                         | text                        |           |          |
+ currency_rate                | numeric                     |           |          |
+ amount_untaxed               | numeric                     |           |          |
+ amount_tax                   | numeric                     |           |          |
+ amount_total                 | numeric                     |           |          |
+ locked                       | boolean                     |           |          |
+ require_signature            | boolean                     |           |          |
+ require_payment              | boolean                     |           |          |
+ create_date                  | timestamp without time zone |           |          |
+ commitment_date              | timestamp without time zone |           |          |
+ date_order                   | timestamp without time zone |           | not null |
+ signed_on                    | timestamp without time zone |           |          |
+ write_date                   | timestamp without time zone |           |          |
+ prepayment_percent           | double precision            |           |          |
+ pending_email_template_id    | integer                     |           |          |
+ sale_order_template_id       | integer                     |           |          |
+ customizable_pdf_form_fields | jsonb                       |           |          |
+ opportunity_id               | integer                     |           |          |
+Indexes:
+    "sale_order_pkey" PRIMARY KEY, btree (id)
+    "sale_order__campaign_id_index" btree (campaign_id) WHERE campaign_id IS NOT NULL
+```
+
