@@ -218,8 +218,45 @@ CREATE TABLE IF NOT EXISTS staging.sales_clean (
     etl_load_date       TIMESTAMP      DEFAULT NOW(),
     etl_source          VARCHAR(100)   DEFAULT 'hop_pipeline_v1'
 );
+```
 
--- Verificar creación
+- Verificar creación
+```
 \dt staging.*
 \d staging.sales_clean
 ```
+```
+           List of relations
+ Schema  |    Name     | Type  | Owner
+---------+-------------+-------+-------
+ staging | sales_clean | table | user
+(1 row)
+
+                                              Table "staging.sales_clean"
+     Column     |            Type             | Collation | Nullable |                     Default
+----------------+-----------------------------+-----------+----------+-------------------------------------------------
+ id             | integer                     |           | not null | nextval('staging.sales_clean_id_seq'::regclass)
+ sale_order_id  | integer                     |           |          |
+ order_name     | character varying(100)      |           |          |
+ partner_name   | character varying(255)      |           |          |
+ partner_email  | character varying(255)      |           |          |
+ product_name   | character varying(255)      |           |          |
+ product_code   | character varying(100)      |           |          |
+ qty_ordered    | numeric(16,4)               |           |          | 0
+ unit_price     | numeric(16,4)               |           |          | 0
+ price_subtotal | numeric(16,4)               |           |          | 0
+ order_date     | date                        |           |          |
+ order_state    | character varying(50)       |           |          |
+ currency_name  | character varying(10)       |           |          |
+ etl_load_date  | timestamp without time zone |           |          | now()
+ etl_source     | character varying(100)      |           |          | 'hop_pipeline_v1'::character varying
+Indexes:
+    "sales_clean_pkey" PRIMARY KEY, btree (id)
+
+```
+- Dar permisos
+```
+
+```
+
+
