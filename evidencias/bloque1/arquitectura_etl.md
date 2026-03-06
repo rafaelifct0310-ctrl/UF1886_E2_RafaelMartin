@@ -88,3 +88,9 @@ WARNING: sun.misc.Unsafe::objectFieldOffset will be removed in a future release
 2.16.0
 ```
 
+# Identificar flujo de datos
+### Entrar al contenedor PostgreSQL
+
+```
+docker exec -it postgres.db psql -U user -d odoo
+```
