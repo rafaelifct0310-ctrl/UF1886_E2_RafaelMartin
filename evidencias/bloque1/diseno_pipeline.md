@@ -194,3 +194,7 @@ id | order_id | product_id |                       name                        |
 (10 rows)
 
 ```
+
+#### Crear Schema Staging y tabla destino
+```
+
