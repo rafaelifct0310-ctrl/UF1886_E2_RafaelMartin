@@ -45,7 +45,7 @@ odoo=# \df
 
  ```
 
-#### Ver estrucutra de sale_order
+#### Ver estructura de sale_order
 ```
 \d sale_order
 ```
@@ -101,7 +101,7 @@ Indexes:
     "sale_order_pkey" PRIMARY KEY, btree (id)
     "sale_order__campaign_id_index" btree (campaign_id) WHERE campaign_id IS NOT NULL
 ```
-
+#### Ver estructura de sale_order_line
 ```
 \d sale_order_line
 ```
@@ -172,6 +172,25 @@ SELECT id, name, partner_id, date_order, amount_total, state FROM sale_order LIM
   4 | S00004 |         11 | 2026-03-05 13:13:43        |      2240.00 | sale
   7 | S00007 |         11 | 2026-03-05 13:13:43        |      1706.00 | sale
   9 | S00009 |         11 | 2026-02-26 13:13:43.712546 |       654.00 | sale
+(10 rows)
+
+```
+```
+SELECT id, order_id, product_id, name, product_uom_qty, price_unit, price_subtotal FROM sale_order_line LIMIT 10;
+```
+```
+id | order_id | product_id |                       name                        | product_uom_qty | price_unit | price_subtotal
+----+----------+------------+---------------------------------------------------+-----------------+------------+----------------
+  1 |        1 |         32 | [FURN_6667] Pantallas de bloque acústico (Madera) |            3.00 |     295.00 |         885.00
+  2 |        1 |          6 | [FURN_8888] Lámpara de oficina                    |            5.00 |     145.00 |         725.00
+  3 |        1 |          5 | [FURN_7777] Silla de oficina                      |            2.00 |      65.00 |         130.00
+  4 |        2 |          3 | Diseño interior virtual                           |           24.00 |      75.00 |        1800.00
+  5 |        2 |          4 | Área de casa virtual                              |           30.00 |      38.25 |        1147.50
+  6 |        3 |          3 | Diseño interior virtual                           |           10.00 |      30.75 |         307.50
+  7 |        3 |          5 | [FURN_7777] Silla de oficina                      |            1.00 |      70.00 |          70.00
+ 12 |        5 |          6 | [FURN_8888] Lámpara de oficina                    |            1.00 |     405.00 |         405.00
+ 40 |       19 |         32 | [FURN_6667] Pantallas de bloque acústico (Madera) |            3.00 |     295.00 |         885.00
+ 41 |       19 |          6 | [FURN_8888] Lámpara de oficina                    |            5.00 |     145.00 |         725.00
 (10 rows)
 
 ```
