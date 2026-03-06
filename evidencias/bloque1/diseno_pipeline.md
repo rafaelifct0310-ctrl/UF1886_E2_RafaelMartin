@@ -155,3 +155,23 @@ Indexes:
     "sale_order_line_pkey" PRIMARY KEY, btree (id)
     "sale_order_line__company_id_index" btree (company_id)
 ```
+#### Datos disponibles
+```
+SELECT id, name, partner_id, date_order, amount_total, state FROM sale_order LIMIT 10;
+```
+```
+ id |  name  | partner_id |         date_order         | amount_total | state
+----+--------+------------+----------------------------+--------------+-------
+  1 | S00001 |         10 | 2026-02-05 13:13:00        |      1740.00 | draft
+  2 | S00002 |         12 | 2026-02-05 13:13:00        |      2947.50 | draft
+  3 | S00003 |         12 | 2026-03-05 13:13:43        |       377.50 | draft
+  5 | S00005 |         10 | 2026-02-05 13:13:00        |       405.00 | draft
+ 19 | S00019 |          8 | 2026-02-05 13:13:00        |      1740.00 | sent
+  6 | S00006 |         16 | 2026-03-05 13:13:43        |       750.00 | sale
+  8 | S00008 |         11 | 2026-03-05 13:13:43        |       462.00 | sale
+  4 | S00004 |         11 | 2026-03-05 13:13:43        |      2240.00 | sale
+  7 | S00007 |         11 | 2026-03-05 13:13:43        |      1706.00 | sale
+  9 | S00009 |         11 | 2026-02-26 13:13:43.712546 |       654.00 | sale
+(10 rows)
+
+```
