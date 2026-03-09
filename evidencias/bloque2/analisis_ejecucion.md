@@ -16,3 +16,25 @@ contendor: postgres.db
 owner: user
 database: odoo
 ```
+
+```sql
+-- Filas cargadas en destino
+SELECT COUNT(*) AS total_filas FROM staging.sales_clean;
+
+-- Distribución por estado
+SELECT order_state, COUNT(*) AS total
+FROM staging.sales_clean
+GROUP BY order_state;
+
+-- Verificar nulos residuales
+SELECT 
+    COUNT(*) FILTER (WHERE partner_email IS NULL) AS nulos_email,
+    COUNT(*) FILTER (WHERE product_code IS NULL) AS nulos_codigo,
+    COUNT(*) FILTER (WHERE qty_ordered IS NULL)  AS nulos_qty,
+    COUNT(*) FILTER (WHERE order_date IS NULL)   AS nulos_fecha
+FROM staging.sales_clean;
+
+-- Muestra de datos
+SELECT * FROM staging.sales_clean LIMIT 5;
+
+```
