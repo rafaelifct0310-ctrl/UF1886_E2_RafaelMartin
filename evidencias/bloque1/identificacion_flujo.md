@@ -25,3 +25,4 @@ WHERE
     so.state IN ('sale', 'done')
 ORDER BY so.date_order ASC;
 ```
+- Tabla de destino: **sales_clean** 
