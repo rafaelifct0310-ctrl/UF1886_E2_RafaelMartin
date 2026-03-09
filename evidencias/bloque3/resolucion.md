@@ -20,4 +20,10 @@
 
 
 ```
-
+#### Tabla resumen
+```
+Incidencia: Error de conexión 
+Tranform falla: Table Input
+Clasificación: Conexión 
+Solución rápida: Reiniciar contenedor
+```
