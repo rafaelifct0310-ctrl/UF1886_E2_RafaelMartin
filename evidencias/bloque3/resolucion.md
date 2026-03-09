@@ -23,7 +23,7 @@
 #### Tabla resumen
 ```
 Incidencia: Error de conexión 
-Tranform falla: Table Input
+Tranform falla: src_sales_odoo
 Clasificación: Conexión 
 Solución rápida: Reiniciar contenedor
 ```
