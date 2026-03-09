@@ -21,10 +21,20 @@ database: odoo
 -- Filas cargadas en destino
 SELECT COUNT(*) AS total_filas FROM staging.sales_clean;
 
+total_filas 
+-------------
+          33
+(1 row)
+
 -- Distribución por estado
 SELECT order_state, COUNT(*) AS total
 FROM staging.sales_clean
 GROUP BY order_state;
+
+order_state | total 
+-------------+-------
+ sale        |    33
+(1 row)
 
 -- Verificar nulos residuales
 SELECT 
@@ -34,7 +44,16 @@ SELECT
     COUNT(*) FILTER (WHERE order_date IS NULL)   AS nulos_fecha
 FROM staging.sales_clean;
 
+ nulos_email | nulos_codigo | nulos_qty | nulos_fecha 
+-------------+--------------+-----------+-------------
+           0 |            0 |         0 |           0
+(1 row)
+
 -- Muestra de datos
 SELECT * FROM staging.sales_clean LIMIT 5;
+
+id | sale_order_id | order_name |   partner_name   |       partner_email       |                 product_name                 | product_code | qty_ordered | unit_price | price_subtotal | order_date | order_state | currency_name |       etl_load_date        |   etl_source
+----+---------------+------------+------------------+---------------------------+----------------------------------------------+--------------+-------------+------------+----------------+------------+-------------+---------------+----------------------------+-----------------
+ 34 |            18 | S00018     | Gemini Furniture | john.b@tech.info          | {\r                                         +| FURN_0269    |      2.0000 |   120.5000 |       241.0000 | 2026-01-29 | sale        | EUR           | 2026-03-09 10:18:13.657146 | hop_pipeline_v1
 
 ```
