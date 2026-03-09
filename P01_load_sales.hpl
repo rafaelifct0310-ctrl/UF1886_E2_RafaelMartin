@@ -35,6 +35,11 @@
       <to>Select values</to>
       <enabled>Y</enabled>
     </hop>
+    <hop>
+      <from>Select values</from>
+      <to>dst_staging_sales_clean</to>
+      <enabled>Y</enabled>
+    </hop>
   </order>
   <transform>
     <name>Select values</name>
@@ -49,14 +54,7 @@
     </partitioning>
     <fields>
       <meta>
-        <conversion_mask/>
-        <currency_symbol/>
         <date_format_lenient>N</date_format_lenient>
-        <date_format_locale/>
-        <date_format_timezone/>
-        <decimal_symbol/>
-        <encoding/>
-        <grouping_symbol/>
         <length>10</length>
         <lenient_string_to_number>N</lenient_string_to_number>
         <name>sale_order_id</name>
@@ -67,14 +65,7 @@
         <type>Integer</type>
       </meta>
       <meta>
-        <conversion_mask/>
-        <currency_symbol/>
         <date_format_lenient>N</date_format_lenient>
-        <date_format_locale/>
-        <date_format_timezone/>
-        <decimal_symbol/>
-        <encoding/>
-        <grouping_symbol/>
         <length>100</length>
         <lenient_string_to_number>N</lenient_string_to_number>
         <name>order_name</name>
@@ -85,14 +76,7 @@
         <type>String</type>
       </meta>
       <meta>
-        <conversion_mask/>
-        <currency_symbol/>
         <date_format_lenient>N</date_format_lenient>
-        <date_format_locale/>
-        <date_format_timezone/>
-        <decimal_symbol/>
-        <encoding/>
-        <grouping_symbol/>
         <length>255</length>
         <lenient_string_to_number>N</lenient_string_to_number>
         <name>partner_name</name>
@@ -103,14 +87,7 @@
         <type>String</type>
       </meta>
       <meta>
-        <conversion_mask/>
-        <currency_symbol/>
         <date_format_lenient>N</date_format_lenient>
-        <date_format_locale/>
-        <date_format_timezone/>
-        <decimal_symbol/>
-        <encoding/>
-        <grouping_symbol/>
         <length>255</length>
         <lenient_string_to_number>N</lenient_string_to_number>
         <name>partner_email</name>
@@ -121,14 +98,7 @@
         <type>String</type>
       </meta>
       <meta>
-        <conversion_mask/>
-        <currency_symbol/>
         <date_format_lenient>N</date_format_lenient>
-        <date_format_locale/>
-        <date_format_timezone/>
-        <decimal_symbol/>
-        <encoding/>
-        <grouping_symbol/>
         <length>255</length>
         <lenient_string_to_number>N</lenient_string_to_number>
         <name>product_name</name>
@@ -139,14 +109,7 @@
         <type>String</type>
       </meta>
       <meta>
-        <conversion_mask/>
-        <currency_symbol/>
         <date_format_lenient>N</date_format_lenient>
-        <date_format_locale/>
-        <date_format_timezone/>
-        <decimal_symbol/>
-        <encoding/>
-        <grouping_symbol/>
         <length>100</length>
         <lenient_string_to_number>N</lenient_string_to_number>
         <name>product_code</name>
@@ -157,14 +120,7 @@
         <type>String</type>
       </meta>
       <meta>
-        <conversion_mask/>
-        <currency_symbol/>
         <date_format_lenient>N</date_format_lenient>
-        <date_format_locale/>
-        <date_format_timezone/>
-        <decimal_symbol/>
-        <encoding/>
-        <grouping_symbol/>
         <length>16</length>
         <lenient_string_to_number>N</lenient_string_to_number>
         <name>qty_ordered</name>
@@ -175,14 +131,7 @@
         <type>BigNumber</type>
       </meta>
       <meta>
-        <conversion_mask/>
-        <currency_symbol/>
         <date_format_lenient>N</date_format_lenient>
-        <date_format_locale/>
-        <date_format_timezone/>
-        <decimal_symbol/>
-        <encoding/>
-        <grouping_symbol/>
         <length>16</length>
         <lenient_string_to_number>N</lenient_string_to_number>
         <name>unit_price</name>
@@ -193,14 +142,7 @@
         <type>BigNumber</type>
       </meta>
       <meta>
-        <conversion_mask/>
-        <currency_symbol/>
         <date_format_lenient>N</date_format_lenient>
-        <date_format_locale/>
-        <date_format_timezone/>
-        <decimal_symbol/>
-        <encoding/>
-        <grouping_symbol/>
         <length>16</length>
         <lenient_string_to_number>N</lenient_string_to_number>
         <name>price_subtotal</name>
@@ -212,13 +154,7 @@
       </meta>
       <meta>
         <conversion_mask>dd-MM-yyyy</conversion_mask>
-        <currency_symbol/>
         <date_format_lenient>N</date_format_lenient>
-        <date_format_locale/>
-        <date_format_timezone/>
-        <decimal_symbol/>
-        <encoding/>
-        <grouping_symbol/>
         <length>10</length>
         <lenient_string_to_number>N</lenient_string_to_number>
         <name>order_date</name>
@@ -229,14 +165,7 @@
         <type>Date</type>
       </meta>
       <meta>
-        <conversion_mask/>
-        <currency_symbol/>
         <date_format_lenient>N</date_format_lenient>
-        <date_format_locale/>
-        <date_format_timezone/>
-        <decimal_symbol/>
-        <encoding/>
-        <grouping_symbol/>
         <length>50</length>
         <lenient_string_to_number>N</lenient_string_to_number>
         <name>order_state</name>
@@ -247,14 +176,7 @@
         <type>String</type>
       </meta>
       <meta>
-        <conversion_mask/>
-        <currency_symbol/>
         <date_format_lenient>N</date_format_lenient>
-        <date_format_locale/>
-        <date_format_timezone/>
-        <decimal_symbol/>
-        <encoding/>
-        <grouping_symbol/>
         <length>10</length>
         <lenient_string_to_number>N</lenient_string_to_number>
         <name>currency_name</name>
@@ -269,6 +191,96 @@
     <attributes/>
     <GUI>
       <xloc>672</xloc>
+      <yloc>96</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>dst_staging_sales_clean</name>
+    <type>TableOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <add_columns>N</add_columns>
+    <always_drop_and_recreate>N</always_drop_and_recreate>
+    <auto_update_table_structure>N</auto_update_table_structure>
+    <change_column_types>N</change_column_types>
+    <commit>1000</commit>
+    <connection>odoo_pg_local</connection>
+    <drop_columns>N</drop_columns>
+    <fields>
+      <field>
+        <column_name>sale_order_id</column_name>
+        <stream_name>sale_order_id</stream_name>
+      </field>
+      <field>
+        <column_name>order_name</column_name>
+        <stream_name>order_name</stream_name>
+      </field>
+      <field>
+        <column_name>partner_name</column_name>
+        <stream_name>partner_name</stream_name>
+      </field>
+      <field>
+        <column_name>partner_email</column_name>
+        <stream_name>partner_email</stream_name>
+      </field>
+      <field>
+        <column_name>product_name</column_name>
+        <stream_name>product_name</stream_name>
+      </field>
+      <field>
+        <column_name>product_code</column_name>
+        <stream_name>product_code</stream_name>
+      </field>
+      <field>
+        <column_name>qty_ordered</column_name>
+        <stream_name>qty_ordered</stream_name>
+      </field>
+      <field>
+        <column_name>unit_price</column_name>
+        <stream_name>unit_price</stream_name>
+      </field>
+      <field>
+        <column_name>price_subtotal</column_name>
+        <stream_name>price_subtotal</stream_name>
+      </field>
+      <field>
+        <column_name>order_date</column_name>
+        <stream_name>order_date</stream_name>
+      </field>
+      <field>
+        <column_name>order_state</column_name>
+        <stream_name>order_state</stream_name>
+      </field>
+      <field>
+        <column_name>currency_name</column_name>
+        <stream_name>currency_name</stream_name>
+      </field>
+    </fields>
+    <ignore_errors>N</ignore_errors>
+    <only_when_have_rows>N</only_when_have_rows>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <return_field/>
+    <return_keys>N</return_keys>
+    <schema>staging</schema>
+    <specify_fields>Y</specify_fields>
+    <table>sales_clean</table>
+    <tablename_field/>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_in_table>Y</tablename_in_table>
+    <truncate>Y</truncate>
+    <use_batch>Y</use_batch>
+    <attributes/>
+    <GUI>
+      <xloc>848</xloc>
       <yloc>96</yloc>
     </GUI>
   </transform>
